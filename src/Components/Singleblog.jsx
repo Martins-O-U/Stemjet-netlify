@@ -21,7 +21,7 @@ const SingleBlog = (props) => {
 
     }, [props.match.params.id]);
 
-    return singleblog.length === 0 ? (
+    return singleblog === {} ? (
         <StyledDivTemp>
             <Spinner color="primary" />
         </StyledDivTemp>

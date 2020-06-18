@@ -8,6 +8,7 @@ import Footer from './Components/FooterNav';
 import Navbar from './Components/Navbar';
 import Blogpage from './Components/Blogpage';
 import SingleBlog from './Components/Singleblog';
+import SubmitBlog from './Components/SubmitBlog';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/join" component={JoinUs} />
       <Route path="/blog" component={Blogpage} />
       <Route path="/singleblog/:id" component={SingleBlog} />
+      <Route path="/submitblog" component={SubmitBlog} />
       <Footer />
     </div>
   );
