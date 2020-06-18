@@ -9,6 +9,7 @@ import Navbar from './Components/Navbar';
 import Blogpage from './Components/Blogpage';
 import SingleBlog from './Components/Singleblog';
 import SubmitBlog from './Components/SubmitBlog';
+import Contact from './Components/Contact';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path="/blog" component={Blogpage} />
       <Route path="/singleblog/:id" component={SingleBlog} />
       <Route path="/submitblog" component={SubmitBlog} />
+      <Route path="/contact" component={Contact} />
       <Footer />
     </div>
   );
