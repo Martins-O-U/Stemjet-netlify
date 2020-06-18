@@ -26,7 +26,7 @@ export function Blog(props) {
                     <div className="card-container">
                         <h2>Recent Posts</h2>
                         {data.map(blog => (
-                            <div key={blog.id} className="cards" onClick={() => props.history.push(`/singlePost/${blog.id}`)}>
+                            <div key={blog.id} className="cards" onClick={() => props.history.push(`/singleblog/${blog.id}`)}>
                                 <h5>{blog.title}</h5>
                                 <p>{blog.body.length > 25 ? (
                                     <span>
