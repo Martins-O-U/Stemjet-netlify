@@ -7,6 +7,7 @@ import JoinUs from './Components/Register';
 import Footer from './Components/FooterNav';
 import Navbar from './Components/Navbar';
 import Blogpage from './Components/Blogpage';
+import SingleBlog from './Components/Singleblog';
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Route path="/about" component={About} />
       <Route path="/join" component={JoinUs} />
       <Route path="/blog" component={Blogpage} />
+      <Route path="/singleblog/:id" component={SingleBlog} />
       <Footer />
     </div>
   );
