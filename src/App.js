@@ -6,6 +6,7 @@ import About from './Components/About';
 import JoinUs from './Components/Register';
 import Footer from './Components/FooterNav';
 import Navbar from './Components/Navbar';
+import Blogpage from './Components/Blogpage';
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/join" component={JoinUs} />
+      <Route path="/blog" component={Blogpage} />
       <Footer />
     </div>
   );
