@@ -63,6 +63,7 @@ export default Blog;
 
 const StyledDivTemp = styled.div`
     margin-top: 30%;
+    text-align: center;
 `;
 
 const StyledDiv = styled.div`

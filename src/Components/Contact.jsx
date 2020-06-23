@@ -3,67 +3,67 @@ import axios from "axios";
 import styled from "styled-components";
 
 function Contact(props) {
-    const contact_information = {
-        name: '',
-        email: '',
-        number: '',
-        comment: ''
-    }
+  const contact_information = {
+    name: '',
+    email: '',
+    number: '',
+    comment: ''
+  }
 
-    const [message, setMessage] = useState(contact_information)
-    const [button, setButton] = useState(false)
-    const [submitAction, setsubmitAction] = useState(false)
+  const [message, setMessage] = useState(contact_information)
+  const [button, setButton] = useState(false)
+  const [submitAction, setsubmitAction] = useState(false)
 
-    const handleChange = (e) => {
-        e.persist();
-        setMessage({
-            ...message,
-            [e.target.name]: e.target.value
-        })
-    };
+  const handleChange = (e) => {
+    e.persist();
+    setMessage({
+      ...message,
+      [e.target.name]: e.target.value
+    })
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setButton(!button)
-        setsubmitAction(!submitAction)
-        axios
-            .post('https://stem-jet-db.herokuapp.com/contact/messages', message)
-            .then(res => {
-                props.history.push('/')
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setButton(!button)
+    setsubmitAction(!submitAction)
+    axios
+      .post('https://stem-jet-db.herokuapp.com/contact/messages', message)
+      .then(res => {
+        props.history.push('/')
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
+  };
 
-    return (
-        <StyledDiv>
-            <div className=" form-container animated animatedFadeInUp fadeInUp">
-                <h2 className="p-one">We'd Be Delighted To Hear From You.</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className={`${submitAction ? 'show' : 'hide'}`}>
-                        <p><span>Submitting....</span></p>
-                    </div>
-                    <div className="required">* are required</div>
-                    <div><label>*</label>
-                        <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
-                    </div>
-                    <div><label>*</label>
-                        <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
-                    </div>
-                    <div className="number-class">
-                        <input name="number" type="number" placeholder="Your Phone Number" onChange={handleChange} value={message.number} />
-                    </div>
-                    <div><label>*</label>
-                        <textarea name="comment" maxLength="500" placeholder="Please type your message here..." onChange={handleChange} value={message.comment} required />
-                    </div>
-                    <div className="btn-field">
-                        <button type="submit" className="submit hvr-radial-out" disabled={button}>Submit</button>
-                    </div>
-                </form>
-            </div>
-        </StyledDiv>
-    )
+  return (
+    <StyledDiv>
+      <div className=" form-container animated animatedFadeInUp fadeInUp">
+        <h2 className="p-one">We'd Be Delighted To Hear From You.</h2>
+        <form onSubmit={handleSubmit} method="post" action="send">
+          <div className={`${submitAction ? 'show' : 'hide'}`}>
+            <p><span>Submitting....</span></p>
+          </div>
+          <div className="required">* are required</div>
+          <div><label>*</label>
+            <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
+          </div>
+          <div><label>*</label>
+            <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
+          </div>
+          <div className="number-class">
+            <input name="number" type="number" placeholder="Your Phone Number" onChange={handleChange} value={message.number} />
+          </div>
+          <div><label>*</label>
+            <textarea name="comment" maxLength="500" placeholder="Please type your message here..." onChange={handleChange} value={message.comment} required />
+          </div>
+          <div className="btn-field">
+            <button type="submit" className="submit hvr-radial-out" disabled={button}>Submit</button>
+          </div>
+        </form>
+      </div>
+    </StyledDiv>
+  )
 }
 
 export default Contact;
