@@ -92,7 +92,7 @@ text-align: left;
 .join{
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
     @media only screen and (max-width:650px){

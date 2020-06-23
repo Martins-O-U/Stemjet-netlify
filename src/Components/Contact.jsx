@@ -73,6 +73,12 @@ text-align: center;
 .p-one{
   padding-top: 3%;
   margin-bottom: 5px;
+  @media only screen and (max-width:480px){
+    font-size: 25px;
+  }
+  @media only screen and (max-width:380px){
+    font-size: 22px;
+  }
 }
 label{
   color: red;
@@ -136,15 +142,16 @@ span{
     -webkit-animation-name: fadeInUp;
   }
   .form-container{
-    margin-top: 8%;
-    margin-left: 15%;
-    margin-right: 15%; 
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%; 
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 5px;
     text-align: center;
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
+
   }
   form{
       margin-top: 30px;
