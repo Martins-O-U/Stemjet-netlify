@@ -4,49 +4,49 @@ import styled from "styled-components";
 import students from "./../images/students.jpg"
 
 export default function Home() {
-    return (
-        <StyledDiv id="home-home">
-            <div className="home-background">
-                <img src={students} alt="Students in class" />
-            </div>
-            <h2 className="home-wel">Welcome to STEMJets</h2>
-            <p className="tagline"><i>Explore. Educate. Empower.</i></p>
-            <div className="paragraphs">
-                <div className="mission-vission">
-                    <div>
-                        <h5><strong>Our Mission</strong></h5>
-                        <div>Our mission is to foster global competitiveness of students especially in disadvantaged regions towards technological advancement to improve the quality of life, upward mobility and economic
+  return (
+    <StyledDiv id="home-home">
+      <div className="home-background">
+        <img src={students} alt="Students in class" />
+      </div>
+      <h2 className="home-wel">Welcome to STEMJets</h2>
+      <p className="tagline"><i>Explore. Educate. Empower.</i></p>
+      <div className="paragraphs">
+        <div className="mission-vission">
+          <div>
+            <h5><strong>Our Mission</strong></h5>
+            <div>Our mission is to foster global competitiveness of students especially in disadvantaged regions towards technological advancement to improve the quality of life, upward mobility and economic
                 diversification.<br></br>We will achieve these through AMI:
               <ul>
-                                <li>Access</li>
-                                <li>Mobility</li>
-                                <li>Inclusion</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <h5><strong>Our Vision</strong></h5>
-                        <p>To establish global impact and be recognized as a key stakeholder in the African evolution of science education.</p>
-                    </div>
-                </div>
-                <div className="values-join">
-                    <div className="values">
-                        <h5><strong>Our Core Values</strong></h5>
-                        <div>
-                            <ul>
-                                <li>Resilience</li>
-                                <li>Open-mindedness</li>
-                                <li>Confidence</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="about-us">
-                        <p>To know more about us <br></br><span className="hvr-radial-out"> <Link to="/about">Click here!</Link></span></p>
-                    </div>
-                </div>
+                <li>Access</li>
+                <li>Mobility</li>
+                <li>Inclusion</li>
+              </ul>
             </div>
-        </StyledDiv>
-    )
+          </div>
+          <div>
+            <h5><strong>Our Vision</strong></h5>
+            <p>To establish global impact and be recognized as a key stakeholder in the African evolution of science education.</p>
+          </div>
+        </div>
+        <div className="values-join">
+          <div className="values">
+            <h5><strong>Our Core Values</strong></h5>
+            <div>
+              <ul>
+                <li>Resilience</li>
+                <li>Open-mindedness</li>
+                <li>Confidence</li>
+              </ul>
+            </div>
+          </div>
+          <div className="about-us">
+            <p>To know more about us <br></br><span className="hvr-radial-out"> <Link to="/about">Click here!</Link></span></p>
+          </div>
+        </div>
+      </div>
+    </StyledDiv>
+  )
 }
 
 const StyledDiv = styled.div`
@@ -57,18 +57,39 @@ const StyledDiv = styled.div`
     padding-bottom: 10px;
     margin-bottom: 60px;
 
+    @media only screen and (max-width:480px){
+      margin-top: 10px;
+    }
+
       .paragraphs{
         display: flex;
         justify-content: space-between;
+
+        @media only screen and (max-width:550px){
+          flex-direction: column;
+
+          .values-join{
+            width: 97%;
+            margin-left: 2%;
+          }
+          .mission-vission{
+            width: 92%;
+            margin-bottom: 15px;
+          }
+        }
       }
       
       .home-wel{
         text-align: center;
         margin-top: 10px;
         margin-bottom: -2px;
+        @media only screen and (max-width:350px){
+          font-size: 25px;
+        }
       } 
 
       .tagline{
+        text-align: center;
           margin-top: 2px;
           font-size: 14px;
       }
@@ -172,6 +193,7 @@ const StyledDiv = styled.div`
       .home-background img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
 `;
 

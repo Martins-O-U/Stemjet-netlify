@@ -100,11 +100,11 @@ a:hover {
         padding-left: 80%;
         padding-right: 5px;
     }
-    @media only screen and (max-width:310px){
-        padding-left: 70%;
+    @media only screen and (max-width:320px){
+        padding-left: 72%;
         padding-right: 5px;
     }
-    @media only screen and (max-width:200px){
+    @media only screen and (max-width:220px){
         padding-left: 5px;
     }
 }

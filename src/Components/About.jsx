@@ -41,7 +41,18 @@ export default function About() {
 const StyledPage = styled.div`
     margin-top: 4.8%;
     text-align: center;
-
+    @media only screen and (max-width:1000px){
+        margin-top: 6%;
+    }
+    @media only screen and (max-width:800px){
+        margin-top: 8%;
+    }
+    @media only screen and (max-width:600px){
+        margin-top: 10%;
+    }
+    @media only screen and (max-width:480px){
+        margin-top: 4%;
+    }
     header{
         height: 200px;
         background: #E6E6FA;
@@ -53,7 +64,7 @@ const StyledPage = styled.div`
             width: 85%;
             
             @media only screen and (max-width:460px){
-                width:93%;
+                width:90%;
             }
             img{
                 width: 100%;
@@ -61,6 +72,9 @@ const StyledPage = styled.div`
                 object-fit: cover;
                 @media only screen and (max-width:460px){
                     height: 300px;
+                }
+                @media only screen and (max-width:400px){
+                    height: 260px;
                 }
             }
 
@@ -126,7 +140,10 @@ text-align: left;
     font-size: 30px;
 }
 @media only screen and (max-width:460px){
-    margin: 200px 15px 70px 10px;
+    margin: 185px 15px 70px 10px;
+}
+@media only screen and (max-width:400px){
+    margin: 150px 15px 70px 10px;
 }
 
 .hvr-radial-out {
