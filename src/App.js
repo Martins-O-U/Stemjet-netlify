@@ -10,6 +10,7 @@ import Blogpage from './Components/Blogpage';
 import SingleBlog from './Components/Singleblog';
 import SubmitBlog from './Components/SubmitBlog';
 import Contact from './Components/Contact';
+import NavMobile from './Components/Navbar_mobile';
 
 
 
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <NavMobile />
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/join" component={JoinUs} />

@@ -73,7 +73,28 @@ function SubmitBlog(props) {
 export default SubmitBlog;
 
 const StyledDivSubmit = styled.div`
-    margin: 5% 3%;
+    margin: 6% 2% 5% 2%;
+    @media only screen and (max-width:900px){
+        margin-top: 7%;
+    }
+    @media only screen and (max-width:900px){
+        margin-top: 9%;
+    }
+    @media only screen and (max-width:550px){
+        margin-top: 11%;
+    }
+    @media only screen and (max-width:480px){
+        margin-top: 5%;
+    }
+    @media only screen and (max-width:350px){
+        margin-bottom: 25%;
+    }
+    h1{
+        text-align: center;
+        @media only screen and (max-width:400px){
+            font-size: 32px;
+        }
+    }
 
     .hide{
         display: none;

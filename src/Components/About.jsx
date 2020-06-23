@@ -31,7 +31,7 @@ export default function About() {
                 </p>
                 <div className="join">
                     <p><i>Would you like to help make a difference? </i><span className="join-us hvr-radial-out"><Link to="/join">Join our network</Link></span></p>
-                    <p className="join-us hvr-radial-out" ><Link to="/">Back to Home page<br></br> <FontAwesomeIcon icon={faLongArrowAltLeft} size="2x" /></Link></p>
+                    <p><Link to="/" id="back" className="hvr-radial-out"><span><FontAwesomeIcon icon={faLongArrowAltLeft} size="2x" /></span><span>Back to Home page</span></Link></p>
                 </div>
             </StyledParagragph>
         </StyledPage>
@@ -41,18 +41,52 @@ export default function About() {
 const StyledPage = styled.div`
     margin-top: 4.8%;
     text-align: center;
-
+    @media only screen and (max-width:1000px){
+        margin-top: 6%;
+    }
+    @media only screen and (max-width:800px){
+        margin-top: 8%;
+    }
+    @media only screen and (max-width:600px){
+        margin-top: 10%;
+    }
+    @media only screen and (max-width:480px){
+        margin-top: 4%;
+    }
     header{
         height: 200px;
         background: #E6E6FA;
         h1{
             margin-bottom: 20px;
         }
+        .img{
+            margin: auto;
+            width: 85%;
+            
+            @media only screen and (max-width:460px){
+                width:90%;
+            }
+            img{
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                @media only screen and (max-width:460px){
+                    height: 300px;
+                }
+                @media only screen and (max-width:400px){
+                    height: 260px;
+                }
+            }
+
+        }
+
     }
 `;
 
 const StyledParagragph = styled.div`
-margin: 250px 10px 70px 30px;
+margin-top: 250px;
+margin-bottom: 70px;
+padding: 2px 7px 5px 12px;
 text-align: left;
 
 .join{
@@ -60,6 +94,10 @@ text-align: left;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
+    @media only screen and (max-width:650px){
+        flex-direction: column;
+    }
     p{
         display: flex;
         align-items: baseline;
@@ -82,9 +120,30 @@ text-align: left;
     border-radius: 5px;
     cursor: pointer;
   }
+  #back{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    border: 1px solid dodgerblue;
+    margin-top: 8px;
+    margin-left: 5px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    span{
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+  }
 
   #stem{
     font-size: 30px;
+}
+@media only screen and (max-width:460px){
+    margin: 185px 15px 70px 10px;
+}
+@media only screen and (max-width:400px){
+    margin: 150px 15px 70px 10px;
 }
 
 .hvr-radial-out {
