@@ -27,9 +27,9 @@ function Contact(props) {
     setButton(!button)
     setsubmitAction(!submitAction)
     axios
-      .post('https://stem-jet-db.herokuapp.com/contact/messages', message)
+      .post('https://stem-jet-db.herokuapp.com/contact/', message)
       .then(res => {
-        props.history.push('/')
+        props.history.push('/thanks')
       })
       .catch(error => {
         console.log(error.message)
