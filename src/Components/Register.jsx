@@ -3,85 +3,85 @@ import axios from "axios";
 import styled from "styled-components";
 
 function JoinUs(props) {
-    const contact_information = {
-        name: '',
-        email: '',
-        number: '',
-        comment: ''
+  const contact_information = {
+    name: '',
+    email: '',
+    number: '',
+    comment: ''
+  }
+
+  const [message, setMessage] = useState(contact_information)
+  const [button, setButton] = useState(false)
+  const [selectAction, setselectAction] = useState(false)
+
+  const handleChange = (e) => {
+    e.persist();
+    setMessage({
+      ...message,
+      [e.target.name]: e.target.value
+    })
+  };
+
+  const changeAction = (e) => {
+    if (e.target.value === "Child") {
+      setselectAction(true)
+    } else if
+      (e.target.value === "Parent") {
+      setselectAction(false)
     }
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setButton(!button)
+    axios
+      .post('https://portfolio-martins.herokuapp.com/api/', message)
+      .then(res => {
+        // props.history.push('/thanks')
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
+  };
 
-    const [message, setMessage] = useState(contact_information)
-    const [button, setButton] = useState(false)
-    const [selectAction, setselectAction] = useState(false)
-
-    const handleChange = (e) => {
-        e.persist();
-        setMessage({
-            ...message,
-            [e.target.name]: e.target.value
-        })
-    };
-
-    const changeAction = (e) => {
-        if (e.target.value === "Child") {
-            setselectAction(true)
-        } else if
-            (e.target.value === "Parent") {
-            setselectAction(false)
-        }
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setButton(!button)
-        axios
-            .post('https://portfolio-martins.herokuapp.com/api/', message)
-            .then(res => {
-                // props.history.push('/thanks')
-            })
-            .catch(error => {
-                console.log(error.message)
-            })
-    };
-
-    return (
-        <StyledDiv>
-            <h1>Join Us</h1>
-            <div className=" form-container">
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
-                    </div>
-                    <div>
-                        <select onClick={changeAction}>
-                            <option defaultValue="Selected" >Are you a Parent or a Child? Please Select</option>
-                            <option value="Parent" >Parent</option>
-                            <option value="Child">Child</option>
-                        </select>
-                        <div className={`${selectAction ? 'show' : 'hide'}`}>
-                            <div id="parent">
-                                <div>
-                                    <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
-                                </div>
-                                <div className="btn-field">
-                                    <button type="submit" className="submit hvr-radial-out" disabled={button}>Join WhatsApp Comunity</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={`${!selectAction ? 'hide' : 'show'}`}>
-                            <div id="child">
-                                <div>
-                                    <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
-                                </div>
-                                <div className="btn-field">
-                                    <button type="submit" className="submit hvr-radial-out" disabled={button}>Request Parent's Consent</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+  return (
+    <StyledDiv>
+      <h1>Join Us</h1>
+      <div className=" form-container">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
+          </div>
+          <div>
+            <select onClick={changeAction}>
+              <option defaultValue="Selected" >Are you a Parent or a Child?... Please Select</option>
+              <option value="Parent" >Parent</option>
+              <option value="Child">Child</option>
+            </select>
+            <div className={`${selectAction ? 'show' : 'hide'}`}>
+              <div id="parent">
+                <div>
+                  <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
+                </div>
+                <div className="btn-field">
+                  <button type="submit" className="submit hvr-radial-out" disabled={button}>Join Us</button>
+                </div>
+              </div>
             </div>
-        </StyledDiv>
-    )
+            <div className={`${!selectAction ? 'hide' : 'show'}`}>
+              <div id="child">
+                <div>
+                  <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
+                </div>
+                <div className="btn-field">
+                  <button type="submit" className="submit-C hvr-radial-out" disabled={button}>Request Consent</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </StyledDiv>
+  )
 }
 
 export default JoinUs;
@@ -120,16 +120,39 @@ span{
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
 
+    @media only screen and (max-width: 760px){
+      margin: 4% 7%;
+      padding: 30px 15px 5px 15px;
+    }
+
+    @media only screen and (max-width: 590px){
+      margin: 4% 5%;
+      padding: 30px 10px 5px 10px;
+    }
+
+    @media only screen and (max-width: 480px){
+      padding: 30px 5px 5px 5px;
+    }
+
   input{
       width: 70%;
       height: 22px;
       margin: 5px;
+
+      @media only screen and (max-width: 590px){
+        width: 90%;
+      }
   }
   select{
       width: 70%;
       margin: auto;
       height: 22x;
       align-content: center;
+
+      @media only screen and (max-width: 590px){
+        width: 80%;
+      }
+      
   }
   .submit{
     width: 30%;
@@ -141,9 +164,23 @@ span{
     border-radius: 10px;
     font-size: 14.5px;
    }
+   .submit-C{
+    width: 50%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+    padding: 5px 4px;
+    cursor: pointer;
+    border: 1px solid #2098d1;
+    border-radius: 10px;
+    font-size: 14.5px;
+   }
    .btn-field{
     text-align: left;
     margin-left: 14.5%;
+
+    @media only screen and (max-width: 589px){
+      margin-left: 10%;
+    }
    }
    .hvr-radial-out {
     display: inline-block;

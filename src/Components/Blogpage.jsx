@@ -68,11 +68,15 @@ const StyledDivTemp = styled.div`
 
 const StyledDiv = styled.div`
     margin: 5% 1% 6% 1%;
+    h1{
+        text-align: center;
+    }
 `;
 
 const InfoDiv = styled.div`
 display: flex;
 justify-content: space-between;
+
 
 .card-container{
     margin: 3% 1% 0.1% 1%;
@@ -82,6 +86,10 @@ justify-content: space-between;
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
     background-color: #F5F5F5;
+
+    h2{
+        text-align: center;
+    }
 
     .cards {
         border: 0;
@@ -106,11 +114,12 @@ justify-content: space-between;
 
     h2{
         margin-bottom: 5%;
+        text-align: center;
     }
 
    .popular{
        margin: 3% 2%;
-       padding: 2px;
+       padding: 5px;
        border: 1px solid gray;
        border-radius: 5px;
        cursor: pointer;

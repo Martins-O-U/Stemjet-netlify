@@ -11,6 +11,7 @@ import SingleBlog from './Components/Singleblog';
 import SubmitBlog from './Components/SubmitBlog';
 import Contact from './Components/Contact';
 import NavMobile from './Components/Navbar_mobile';
+import Thanks from './Components/Thanks';
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/singleblog/:id" component={SingleBlog} />
       <Route path="/submitblog" component={SubmitBlog} />
       <Route path="/contact" component={Contact} />
+      <Route path="/thanks" component={Thanks} />
       <Footer />
     </div>
   );
