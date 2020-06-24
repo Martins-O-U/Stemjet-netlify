@@ -63,7 +63,7 @@ function JoinUs(props) {
                   <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
                 </div>
                 <div className="btn-field">
-                  <button type="submit" className="submit hvr-radial-out" disabled={button}>Join WhatsApp Comunity</button>
+                  <button type="submit" className="submit hvr-radial-out" disabled={button}>Join Us</button>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ function JoinUs(props) {
                   <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
                 </div>
                 <div className="btn-field">
-                  <button type="submit" className="submit hvr-radial-out" disabled={button}>Request Parent's Consent</button>
+                  <button type="submit" className="submit-C hvr-radial-out" disabled={button}>Request Consent</button>
                 </div>
               </div>
             </div>
@@ -164,9 +164,23 @@ span{
     border-radius: 10px;
     font-size: 14.5px;
    }
+   .submit-C{
+    width: 50%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+    padding: 5px 4px;
+    cursor: pointer;
+    border: 1px solid #2098d1;
+    border-radius: 10px;
+    font-size: 14.5px;
+   }
    .btn-field{
     text-align: left;
     margin-left: 14.5%;
+
+    @media only screen and (max-width: 589px){
+      margin-left: 10%;
+    }
    }
    .hvr-radial-out {
     display: inline-block;
