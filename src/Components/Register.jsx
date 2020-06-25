@@ -5,9 +5,7 @@ import styled from "styled-components";
 function JoinUs(props) {
   const contact_information = {
     name: '',
-    email: '',
-    number: '',
-    comment: ''
+    email: ''
   }
 
   const [message, setMessage] = useState(contact_information)
@@ -34,9 +32,9 @@ function JoinUs(props) {
     e.preventDefault();
     setButton(!button)
     axios
-      .post('https://portfolio-martins.herokuapp.com/api/', message)
+      .post('https://stem-jet-db.herokuapp.com/join-us/', message)
       .then(res => {
-        // props.history.push('/thanks')
+        props.history.push('/registered')
       })
       .catch(error => {
         console.log(error.message)
