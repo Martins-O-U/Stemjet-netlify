@@ -27,17 +27,18 @@ function Contact(props) {
     setButton(!button)
     setsubmitAction(!submitAction)
     axios
-      // .post('https://stem-jet-db.herokuapp.com/contact/', message)
-      .post("http://localhost:7500/contact/", message)
+      .post('https://stem-jet-db.herokuapp.com/contact/', message)
       .then(res => {
         if (res.data.message === 'Contact message sent successfully!') {
           props.history.push('/thanks')
         }
         else {
+          console.log(res + "from res..")
           props.history.push('/error')
         }
       })
       .catch(error => {
+        console.log(error + " From error..")
         props.history.push('/error')
       })
   };
