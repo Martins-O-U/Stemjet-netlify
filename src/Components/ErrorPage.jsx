@@ -63,4 +63,16 @@ const StyledDiv = styled.div`
     text-align: center;
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
+
+    @media only screen and (max-width:900px){
+      margin-top: 28%;
+    }
+
+    @media only screen and (max-width:750px){
+      margin-top: 32%;
+    }
+
+    @media only screen and (max-width:600px){
+      margin-top: 37%;
+    }
 `;

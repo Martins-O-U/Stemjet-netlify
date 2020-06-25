@@ -149,9 +149,7 @@ span{
     -webkit-animation-name: fadeInUp;
   }
   .form-container{
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%; 
+    margin: 8% 10% 8% 10%;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 5px;
@@ -233,14 +231,19 @@ span{
     transform: scale(2);
   }
 
-  @media only screen and (max-width: 850px){
+  @media only screen and (max-width: 1000px){
     .form-container{
       margin-top: 10%;
     }
   }
+  @media only screen and (max-width: 850px){
+    .form-container{
+      margin-top: 12%;
+    }
+  }
   @media only screen and (max-width: 700px){
     .form-container{
-      margin-top: 13%;
+      margin-top: 13.5%;
       margin-left: 10%;
       margin-right: 10%;
     }
@@ -251,18 +254,13 @@ span{
       padding-right: 10px;
       padding-left: 10px;
     }
-  @media only screen and (max-width: 360px){
-    .form-container{
-      margin-bottom: 5%;
+
+    input{
+      width: 80%;
     }
-  }
 
-      input{
-        width: 80%;
-      }
-
-      textarea{
-        width: 80%
-      }
+    textarea{
+      width: 80%
+    }
   }
 `;
