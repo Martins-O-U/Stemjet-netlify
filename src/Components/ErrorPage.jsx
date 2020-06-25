@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-function Thanks() {
+function ErrorPage() {
   return (
     <StyledDiv>
       <div className="box-container animated animatedFadeInUp fadeInUp">
-        <h2>Thank You For Contacting Us.</h2>
-        <p><i>We will be in touch soonest!</i></p>
+        <h2>Oops! Something went wrong.</h2>
+        <p><i>Please check your details and try again!</i></p>
       </div>
     </StyledDiv>
   )
 }
 
-export default Thanks;
+export default ErrorPage;
 
 const StyledDiv = styled.div`
 @keyframes fadeInUp {
@@ -63,16 +63,4 @@ const StyledDiv = styled.div`
     text-align: center;
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
-
-    @media only screen and (max-width:900px){
-      margin-top: 28%;
-    }
-
-    @media only screen and (max-width:750px){
-      margin-top: 32%;
-    }
-
-    @media only screen and (max-width:600px){
-      margin-top: 37%;
-    }
 `;
