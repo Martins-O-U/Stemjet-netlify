@@ -12,6 +12,7 @@ import SubmitBlog from './Components/SubmitBlog';
 import Contact from './Components/Contact';
 import NavMobile from './Components/Navbar_mobile';
 import Thanks from './Components/Thanks';
+import ErrorPage from './Components/ErrorPage';
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/submitblog" component={SubmitBlog} />
       <Route path="/contact" component={Contact} />
       <Route path="/thanks" component={Thanks} />
+      <Route path="/error" component={ErrorPage} />
       <Footer />
     </div>
   );

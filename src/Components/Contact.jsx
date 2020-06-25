@@ -27,12 +27,18 @@ function Contact(props) {
     setButton(!button)
     setsubmitAction(!submitAction)
     axios
-      .post('https://stem-jet-db.herokuapp.com/contact/', message)
+      // .post('https://stem-jet-db.herokuapp.com/contact/', message)
+      .post("http://localhost:7500/contact/", message)
       .then(res => {
-        props.history.push('/thanks')
+        if (res.data.message === 'Contact message sent successfully!') {
+          props.history.push('/thanks')
+        }
+        else {
+          props.history.push('/error')
+        }
       })
       .catch(error => {
-        console.log(error.message)
+        props.history.push('/error')
       })
   };
 
@@ -244,6 +250,11 @@ span{
       padding-right: 10px;
       padding-left: 10px;
     }
+  @media only screen and (max-width: 360px){
+    .form-container{
+      margin-bottom: 5%;
+    }
+  }
 
       input{
         width: 80%;
