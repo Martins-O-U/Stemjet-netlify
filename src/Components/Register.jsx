@@ -42,41 +42,43 @@ function JoinUs(props) {
   };
 
   return (
-    <StyledDiv className="animated animatedFadeInUp fadeInUp">
-      <h1>Join Us</h1>
-      <div className=" form-container">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
-          </div>
-          <div>
-            <select onClick={changeAction}>
-              <option defaultValue="Selected" >Are you a Parent or a Child?... Please Select</option>
-              <option value="Parent" >Parent</option>
-              <option value="Child">Child</option>
-            </select>
-            <div className={`${selectAction ? 'show' : 'hide'}`}>
-              <div id="parent">
-                <div>
-                  <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
+    <StyledDiv>
+      <div className="animated animatedFadeInUp fadeInUp">
+        <h1>Join Us</h1>
+        <div className=" form-container">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
+            </div>
+            <div>
+              <select onClick={changeAction}>
+                <option defaultValue="Selected" >Are you a Parent or a Child?... Please Select</option>
+                <option value="Parent" >Parent</option>
+                <option value="Child">Child</option>
+              </select>
+              <div className={`${selectAction ? 'show' : 'hide'}`}>
+                <div id="parent">
+                  <div>
+                    <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
+                  </div>
+                  <div className="btn-field">
+                    <button type="submit" className="submit hvr-radial-out" disabled={button}>Join Us</button>
+                  </div>
                 </div>
-                <div className="btn-field">
-                  <button type="submit" className="submit hvr-radial-out" disabled={button}>Join Us</button>
+              </div>
+              <div className={`${!selectAction ? 'hide' : 'show'}`}>
+                <div id="child">
+                  <div>
+                    <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
+                  </div>
+                  <div className="btn-field">
+                    <button type="submit" className="submit-C hvr-radial-out" disabled={button}>Request Consent</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className={`${!selectAction ? 'hide' : 'show'}`}>
-              <div id="child">
-                <div>
-                  <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
-                </div>
-                <div className="btn-field">
-                  <button type="submit" className="submit-C hvr-radial-out" disabled={button}>Request Consent</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </StyledDiv>
   )

@@ -48,31 +48,71 @@ function SubmitBlog(props) {
     };
     return (
         <StyledDivSubmit>
-            <h1>Write A Blog Post</h1>
-            <div className={`${submitAction ? 'show' : 'hide'}`}>
-                <Alert color="success">
-                    Submitting your blog post...!
+            <div className="animated animatedFadeInUp fadeInUp">
+                <h1>Write A Blog Post</h1>
+                <div className={`${submitAction ? 'show' : 'hide'}`}>
+                    <Alert color="success">
+                        Submitting your blog post...!
                 </Alert>
-            </div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="title">
-                    <input id="title" type="text" placeholder="Title" onChange={handleChange} name="title" value={words.title} autoFocus required />
-                </label>
-
-                <label htmlFor="story">
-                    <textarea placeholder="Write your message..." onChange={handleChange} name="body" value={words.body} required />
-                </label>
-                <div className="btn-field">
-                    <button type="submit" className="submit hvr-radial-out" disabled={button}>Submit</button>
                 </div>
-            </form>
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="title">
+                        <input id="title" type="text" placeholder="Title" onChange={handleChange} name="title" value={words.title} autoFocus required />
+                    </label>
 
+                    <label htmlFor="story">
+                        <textarea placeholder="Write your message..." onChange={handleChange} name="body" value={words.body} required />
+                    </label>
+                    <div className="btn-field">
+                        <button type="submit" className="submit hvr-radial-out" disabled={button}>Submit</button>
+                    </div>
+                </form>
+            </div>
         </StyledDivSubmit>
     )
 }
 export default SubmitBlog;
 
 const StyledDivSubmit = styled.div`
+@keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeInUp {
+    from {
+      transform: translate3d(0, 40px, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  .animated {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+  }
+
+  .animatedFadeInUp {
+    opacity: 0;
+  }
+
+  .fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+  }
+
     margin: 6% 2% 5% 2%;
     @media only screen and (max-width:900px){
         margin-top: 7%;
@@ -218,5 +258,5 @@ const StyledDivSubmit = styled.div`
     .hvr-radial-out:active:before {
     -webkit-transform: scale(2);
     transform: scale(2);
-    }    
+    }  
 `;
