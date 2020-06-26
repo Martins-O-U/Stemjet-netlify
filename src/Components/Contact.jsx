@@ -133,9 +133,9 @@ span{
   }
 
   .animated {
-    animation-duration: 0.9s;
+    animation-duration: 0.7s;
     animation-fill-mode: both;
-    -webkit-animation-duration: 0.9s;
+    -webkit-animation-duration: 0.7s;
     -webkit-animation-fill-mode: both;
   }
 
@@ -149,7 +149,7 @@ span{
     -webkit-animation-name: fadeInUp;
   }
   .form-container{
-    margin: 8% 10% 8% 10%;
+    margin: 8% 10% 7% 10%;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 5px;
@@ -157,6 +157,26 @@ span{
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
 
+    @media only screen and (max-width: 1000px){
+      margin-top: 10%;
+    }
+    @media only screen and (max-width: 850px){
+      margin-top: 12%;
+    }
+    @media only screen and (max-width: 700px){
+      margin-top: 13.5%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    @media only screen and (max-width: 550px){
+      margin-top: 15.5%;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    @media only screen and (max-width: 360px){
+      margin-top: 8%;
+      margin-bottom: 11%;
+    }
   }
   form{
       margin-top: 30px;
@@ -165,12 +185,20 @@ span{
       width: 70%;
       height: 23px;
       margin: 1px;
+
+      @media only screen and (max-width: 550px){   
+        width: 80%;
+      }
   }
   textarea{
       width: 70%;
       height: 150px;
       margin-top: 10px;
       margin-bottom: 5px;
+
+      @media only screen and (max-width: 550px){   
+        width: 80%
+      }
   }
   .submit{
     width: 75px;
@@ -229,38 +257,5 @@ span{
   .hvr-radial-out:active:before {
     -webkit-transform: scale(2);
     transform: scale(2);
-  }
-
-  @media only screen and (max-width: 1000px){
-    .form-container{
-      margin-top: 10%;
-    }
-  }
-  @media only screen and (max-width: 850px){
-    .form-container{
-      margin-top: 12%;
-    }
-  }
-  @media only screen and (max-width: 700px){
-    .form-container{
-      margin-top: 13.5%;
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-  }
-  @media only screen and (max-width: 550px){
-    .form-container{
-      margin-top: 15.5%;
-      padding-right: 10px;
-      padding-left: 10px;
-    }
-
-    input{
-      width: 80%;
-    }
-
-    textarea{
-      width: 80%
-    }
   }
 `;

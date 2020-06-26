@@ -42,7 +42,7 @@ function JoinUs(props) {
   };
 
   return (
-    <StyledDiv>
+    <StyledDiv className="animated animatedFadeInUp fadeInUp">
       <h1>Join Us</h1>
       <div className=" form-container">
         <form onSubmit={handleSubmit}>
@@ -87,6 +87,46 @@ export default JoinUs;
 const StyledDiv = styled.div`
 text-align: center;
 Margin-top: 5%;
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
 .hide{
   #child{
     display: none;

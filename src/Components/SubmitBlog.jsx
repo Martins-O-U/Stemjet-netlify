@@ -86,8 +86,8 @@ const StyledDivSubmit = styled.div`
     @media only screen and (max-width:480px){
         margin-top: 5%;
     }
-    @media only screen and (max-width:350px){
-        margin-bottom: 25%;
+    @media only screen and (max-width:360px){
+        margin-bottom: 20%;
     }
     h1{
         text-align: center;
@@ -154,6 +154,10 @@ const StyledDivSubmit = styled.div`
             }
             &:-moz-placeholder { /* Firefox 18- */
                 font-size: 17px;
+            }
+
+            @media only screen and (max-width:360px){
+                height: 250px;
             }
         }
     }
