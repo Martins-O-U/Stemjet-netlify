@@ -6,36 +6,38 @@ import styled from "styled-components";
 import aboutImg from "../images/about.jpg";
 
 export default function About() {
-    return (
-        <StyledPage>
-            <header>
-                <h1>Our Story</h1>
-                <div className="img"><img src={aboutImg} alt="Happy-Kids" /></div>
-            </header>
-            <StyledParagragph>
-                <p className="about-us">
-                    <span id="stem">S</span>TEMJets offers a platform for schools and parents to provide flexible experiential STEM
+  return (
+    <StyledPage >
+      <div className="animated animatedFadeInUp fadeInUp">
+        <header>
+          <h1>Our Story</h1>
+          <div className="img"><img src={aboutImg} alt="Happy-Kids" /></div>
+        </header>
+        <StyledParagragph>
+          <p className="about-us">
+            <span id="stem">S</span>TEMJets offers a platform for schools and parents to provide flexible experiential STEM
                 (Science, Technology, Engineering and Mathematics) learning to pre-university students
                 through a collaborative and low-cost approach. This platform helps students to develop practical
                 skills necessary to aspire and succeed in emerging STEM careers while promoting access,
                 mobility and inclusion.The future of work is dynamic and requires a workforce that is as skilled
                 as it is knowledgeable.
                 </p>
-                <p className="Next-path">Our value hypothesis is that an increase in the creativeness of STEM education will lead to an
-                increased interest of pre-university students in STEM and promote innovation. The goal of
-                STEMJets is to promote technological innovation by revolutionising the delivery model of STEM
-                education, complementing traditional schools by facilitating hands-on training exercises,
-                mirroring their everyday challenges. We make these fields attractive to today's generation,
-                minimise the perception that science is for geniuses and improve their ability to link science to
-                societal problem-solving.
+          <p className="Next-path">Our value hypothesis is that an increase in the creativeness of STEM education will lead to an
+          increased interest of pre-university students in STEM and promote innovation. The goal of
+          STEMJets is to promote technological innovation by revolutionising the delivery model of STEM
+          education, complementing traditional schools by facilitating hands-on training exercises,
+          mirroring their everyday challenges. We make these fields attractive to today's generation,
+          minimise the perception that science is for geniuses and improve their ability to link science to
+          societal problem-solving.
                 </p>
-                <div className="join">
-                    <p><i>Would you like to help make a difference? </i><span className="join-us hvr-radial-out"><Link to="/join">Join our network</Link></span></p>
-                    <p><Link to="/" id="back" className="hvr-radial-out"><span><FontAwesomeIcon icon={faLongArrowAltLeft} size="2x" /></span><span>Back to Home page</span></Link></p>
-                </div>
-            </StyledParagragph>
-        </StyledPage>
-    )
+          <div className="join">
+            <p><i>Would you like to help make a difference? </i><span className="join-us hvr-radial-out"><Link to="/join">Join our network</Link></span></p>
+            <p><Link to="/" id="back" className="hvr-radial-out"><span><FontAwesomeIcon icon={faLongArrowAltLeft} size="2x" /></span><span>Back to Home page</span></Link></p>
+          </div>
+        </StyledParagragph>
+      </div>
+    </StyledPage>
+  )
 }
 
 const StyledPage = styled.div`
@@ -81,6 +83,46 @@ const StyledPage = styled.div`
         }
 
     }
+
+    @keyframes fadeInUp {
+        from {
+          transform: translate3d(0, 40px, 0);
+        }
+    
+        to {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+      }
+    
+      @-webkit-keyframes fadeInUp {
+        from {
+          transform: translate3d(0, 40px, 0);
+        }
+    
+        to {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+      }
+    
+      .animated {
+        animation-duration: 0.7s;
+        animation-fill-mode: both;
+        -webkit-animation-duration: 0.7s;
+        -webkit-animation-fill-mode: both;
+      }
+    
+      .animatedFadeInUp {
+        opacity: 0;
+      }
+    
+      .fadeInUp {
+        opacity: 0;
+        animation-name: fadeInUp;
+        -webkit-animation-name: fadeInUp;
+      }
+    
 `;
 
 const StyledParagragph = styled.div`

@@ -5,9 +5,7 @@ import styled from "styled-components";
 function JoinUs(props) {
   const contact_information = {
     name: '',
-    email: '',
-    number: '',
-    comment: ''
+    email: ''
   }
 
   const [message, setMessage] = useState(contact_information)
@@ -34,9 +32,9 @@ function JoinUs(props) {
     e.preventDefault();
     setButton(!button)
     axios
-      .post('https://portfolio-martins.herokuapp.com/api/', message)
+      .post('https://stem-jet-db.herokuapp.com/join-us/', message)
       .then(res => {
-        // props.history.push('/thanks')
+        props.history.push('/registered')
       })
       .catch(error => {
         console.log(error.message)
@@ -45,40 +43,42 @@ function JoinUs(props) {
 
   return (
     <StyledDiv>
-      <h1>Join Us</h1>
-      <div className=" form-container">
-        <form onSubmit={handleSubmit}>
-          <div>
-            <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
-          </div>
-          <div>
-            <select onClick={changeAction}>
-              <option defaultValue="Selected" >Are you a Parent or a Child?... Please Select</option>
-              <option value="Parent" >Parent</option>
-              <option value="Child">Child</option>
-            </select>
-            <div className={`${selectAction ? 'show' : 'hide'}`}>
-              <div id="parent">
-                <div>
-                  <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
+      <div className="animated animatedFadeInUp fadeInUp">
+        <h1>Join Us</h1>
+        <div className=" form-container">
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input name="name" type="text" placeholder="Hello, What is your name?" onChange={handleChange} value={message.name} required />
+            </div>
+            <div>
+              <select onClick={changeAction}>
+                <option defaultValue="Selected" >Are you a Parent or a Child?... Please Select</option>
+                <option value="Parent" >Parent</option>
+                <option value="Child">Child</option>
+              </select>
+              <div className={`${selectAction ? 'show' : 'hide'}`}>
+                <div id="parent">
+                  <div>
+                    <input name="email" placeholder="Your Email" onChange={handleChange} value={message.email} required />
+                  </div>
+                  <div className="btn-field">
+                    <button type="submit" className="submit hvr-radial-out" disabled={button}>Join Us</button>
+                  </div>
                 </div>
-                <div className="btn-field">
-                  <button type="submit" className="submit hvr-radial-out" disabled={button}>Join Us</button>
+              </div>
+              <div className={`${!selectAction ? 'hide' : 'show'}`}>
+                <div id="child">
+                  <div>
+                    <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
+                  </div>
+                  <div className="btn-field">
+                    <button type="submit" className="submit-C hvr-radial-out" disabled={button}>Request Consent</button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className={`${!selectAction ? 'hide' : 'show'}`}>
-              <div id="child">
-                <div>
-                  <input name="email" placeholder="Your Parent's Email" onChange={handleChange} value={message.email} required />
-                </div>
-                <div className="btn-field">
-                  <button type="submit" className="submit-C hvr-radial-out" disabled={button}>Request Consent</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </StyledDiv>
   )
@@ -89,6 +89,46 @@ export default JoinUs;
 const StyledDiv = styled.div`
 text-align: center;
 Margin-top: 5%;
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
 .hide{
   #child{
     display: none;

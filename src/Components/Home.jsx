@@ -5,43 +5,45 @@ import students from "./../images/students.jpg"
 
 export default function Home() {
   return (
-    <StyledDiv id="home-home">
-      <div className="home-background">
-        <img src={students} alt="Students in class" />
-      </div>
-      <h2 className="home-wel">Welcome to STEMJets</h2>
-      <p className="tagline"><i>Explore. Educate. Empower.</i></p>
-      <div className="paragraphs">
-        <div className="mission-vission">
-          <div>
-            <h5><strong>Our Mission</strong></h5>
-            <div>Our mission is to foster global competitiveness of students especially in disadvantaged regions towards technological advancement to improve the quality of life, upward mobility and economic
+    <StyledDiv>
+      <div className="animated animatedFadeInUp fadeInUp">
+        <div className="home-background">
+          <img src={students} alt="Students in class" />
+        </div>
+        <h2 className="home-wel">Welcome to STEMJets</h2>
+        <p className="tagline"><i>Explore. Educate. Empower.</i></p>
+        <div className="paragraphs">
+          <div className="mission-vission">
+            <div>
+              <h5><strong>Our Mission</strong></h5>
+              <div>Our mission is to foster global competitiveness of students especially in disadvantaged regions towards technological advancement to improve the quality of life, upward mobility and economic
                 diversification.<br></br>We will achieve these through AMI:
               <ul>
-                <li>Access</li>
-                <li>Mobility</li>
-                <li>Inclusion</li>
-              </ul>
+                  <li>Access</li>
+                  <li>Mobility</li>
+                  <li>Inclusion</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div>
-            <h5><strong>Our Vision</strong></h5>
-            <p>To establish global impact and be recognized as a key stakeholder in the African evolution of science education.</p>
-          </div>
-        </div>
-        <div className="values-join">
-          <div className="values">
-            <h5><strong>Our Core Values</strong></h5>
             <div>
-              <ul>
-                <li>Resilience</li>
-                <li>Open-mindedness</li>
-                <li>Confidence</li>
-              </ul>
+              <h5><strong>Our Vision</strong></h5>
+              <p>To establish global impact and be recognized as a key stakeholder in the African evolution of science education.</p>
             </div>
           </div>
-          <div className="about-us">
-            <p>To know more about us <br></br><span className="hvr-radial-out"> <Link to="/about">Click here!</Link></span></p>
+          <div className="values-join">
+            <div className="values">
+              <h5><strong>Our Core Values</strong></h5>
+              <div>
+                <ul>
+                  <li>Resilience</li>
+                  <li>Open-mindedness</li>
+                  <li>Confidence</li>
+                </ul>
+              </div>
+            </div>
+            <div className="about-us">
+              <p>To know more about us <br></br><span className="hvr-radial-out"> <Link to="/about">Click here!</Link></span></p>
+            </div>
           </div>
         </div>
       </div>
@@ -56,6 +58,46 @@ const StyledDiv = styled.div`
     width: 100%;
     padding-bottom: 10px;
     margin-bottom: 60px;
+
+    @keyframes fadeInUp {
+      from {
+        transform: translate3d(0, 40px, 0);
+      }
+  
+      to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+  
+    @-webkit-keyframes fadeInUp {
+      from {
+        transform: translate3d(0, 40px, 0);
+      }
+  
+      to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+  
+    .animated {
+      animation-duration: 0.7s;
+      animation-fill-mode: both;
+      -webkit-animation-duration: 0.7s;
+      -webkit-animation-fill-mode: both;
+    }
+  
+    .animatedFadeInUp {
+      opacity: 0;
+    }
+  
+    .fadeInUp {
+      opacity: 0;
+      animation-name: fadeInUp;
+      -webkit-animation-name: fadeInUp;
+    }
+  
 
     @media only screen and (max-width:480px){
       margin-top: 10px;

@@ -13,6 +13,7 @@ import Contact from './Components/Contact';
 import NavMobile from './Components/Navbar_mobile';
 import Thanks from './Components/Thanks';
 import ErrorPage from './Components/ErrorPage';
+import Registered from './Components/Registered';
 
 
 
@@ -30,6 +31,7 @@ function App() {
       <Route path="/contact" component={Contact} />
       <Route path="/thanks" component={Thanks} />
       <Route path="/error" component={ErrorPage} />
+      <Route path="/registered" component={Registered} />
       <Footer />
     </div>
   );

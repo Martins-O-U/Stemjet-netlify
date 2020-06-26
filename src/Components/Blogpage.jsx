@@ -36,7 +36,6 @@ export function Blog(props) {
                                         <span>{blog.body}</span>
                                     )}
                                 </p>
-                                <h6>Date: <i>{blog.created_at}</i></h6>
                             </div>
                         ))}
                     </div>
@@ -67,7 +66,7 @@ const StyledDivTemp = styled.div`
 `;
 
 const StyledDiv = styled.div`
-    margin: 5% 1% 6% 1%;
+    margin: 5% 1% 10% 1%;
     h1{
         text-align: center;
     }
