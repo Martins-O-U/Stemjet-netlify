@@ -6,7 +6,7 @@ import About from './Components/About';
 import JoinUs from './Components/Register';
 import Footer from './Components/FooterNav';
 import Navbar from './Components/Navbar';
-import Blogpage from './Components/Blogpage';
+import Blogpage from './Components/BlogFiles/Blogpage';
 import SingleBlog from './Components/Singleblog';
 import SubmitBlog from './Components/SubmitBlog';
 import Contact from './Components/Contact';
