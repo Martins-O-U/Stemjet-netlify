@@ -2,18 +2,28 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { Spinner } from "reactstrap";
+import Pagination from "./Pagination";
 
 
 export function Blog(props) {
-
     const [data, setData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage] = useState(10);
+
     useEffect(() => {
         axios
-            .get("https://stem-jet-db.herokuapp.com/api/blogs")
+            // .get("https://stem-jet-db.herokuapp.com/api/blogs")
+            .get('https://jsonplaceholder.typicode.com/posts')
             .then(res => {
                 setData(res.data);
             });
     }, []);
+
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+
+    const paginate = pageNumber => setCurrentPage(pageNumber);
 
     return data.length === 0 ? (
         <StyledDivTemp>
@@ -25,7 +35,7 @@ export function Blog(props) {
                 <InfoDiv>
                     <div className="card-container">
                         <h2>Recent Posts</h2>
-                        {data.map(blog => (
+                        {currentPosts.map(blog => (
                             <div key={blog.id} className="cards" onClick={() => props.history.push(`/singleblog/${blog.id}`)}>
                                 <h5>{blog.title}</h5>
                                 <p>{blog.body.length > 25 ? (
@@ -38,6 +48,7 @@ export function Blog(props) {
                                 </p>
                             </div>
                         ))}
+                        <Pagination postPerPage={postPerPage} totalPosts={data.length} paginate={paginate} />
                     </div>
                     <div className="popular-post">
                         <h2>Popular Posts</h2>
