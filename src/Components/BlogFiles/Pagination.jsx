@@ -10,7 +10,7 @@ const Pagination = ({ postPerPage, totalPosts, paginate }) => {
         <StyledNav>
             <ul>
                 {pageNumbers.map(number => (
-                    <li key={number} className="page-item"><a onClick={() => paginate(number)} href="#" className="page-link">{number}</a></li>
+                    <li key={number} className="page-item"><a onClick={() => paginate(number)} href="!#" className="page-link">{number}</a></li>
                 ))}
             </ul>
         </StyledNav>

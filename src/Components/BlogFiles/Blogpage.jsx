@@ -12,7 +12,8 @@ export function Blog(props) {
 
     useEffect(() => {
         axios
-            .get("https://stem-jet-db.herokuapp.com/api/blogs")
+            // .get("https://stem-jet-db.herokuapp.com/api/blogs")
+            .get("https://jsonplaceholder.typicode.com/posts")
             .then(res => {
                 setData(res.data);
             });
