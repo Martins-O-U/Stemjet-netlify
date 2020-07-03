@@ -45,9 +45,9 @@ export default function Home() {
               <h5><strong>Our Core Values</strong></h5>
               <div>
                 <ul>
-                  <li>Resilience</li>
-                  <li>Open-mindedness</li>
-                  <li>Confidence</li>
+                  <li className="animated fadeInRight">Resilience</li>
+                  <li className="animated fadeInRight">Open-mindedness</li>
+                  <li className="animated fadeInRight">Confidence</li>
                 </ul>
               </div>
             </div>
@@ -67,7 +67,7 @@ const StyledDiv = styled.div`
   height: 100%;
   width: 100%;
   padding-bottom: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 
   @keyframes fadeInUp {
     from {
@@ -153,6 +153,83 @@ const StyledDiv = styled.div`
     transform: scale(2);
   }
 
+  #H1-name{
+    margin-top: -5px;
+  }
+  #H1-name2{
+    margin-bottom: 3px;
+  }
+  @-webkit-keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+  }
+  
+  @-webkit-keyframes fadeInRightBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(2000px, 0, 0);
+      transform: translate3d(2000px, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInRightBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(2000px, 0, 0);
+      transform: translate3d(2000px, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInRightBig {
+    -webkit-animation-name: fadeInRightBig;
+    animation-name: fadeInRightBig;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+  }
+
+
   @media only screen and (max-width:480px){
     margin-top: 10px;
   }
@@ -171,57 +248,29 @@ const StyledDiv = styled.div`
       margin-top: 2px;
       font-size: 14px;
   }
-  
-  .values-join{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+
+  .home-background {
+    height: 280px;
   }
   
-  .values{
-    width: 55%;
-    padding: 10px;
-    margin-left: 3%;
-    margin-right: 3%;
-    border: #D3D3D3 0.2px solid;
-    ul{
-      text-align: left;
-    }
-  }
-
-  .about-us{
-    width: 30%;
-    padding: 10px;
-    margin: 2%;
-
-    a{
-      text-decoration: none;
-      color: black;
-    }
-    a:hover{
-      color: white;
-    }
-  }
-
-  span{
-      border: 1px solid dodgerblue;
-      margin-top: 8px;
-      padding: 3px 7px;
-      border-radius: 5px;
-      cursor: pointer;
+  .home-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   .paragraphs{
     width: 90%;
     margin: auto;
     text-align: center;
+    background-color: #F8F8FF;
+    padding-bottom: 20px;
 
     .mission{
       display: flex;
+      margin: auto;
       justify-content: space-between;
       width: 90%;
-      margin: 1.5% 1%;
-      background-color: #F8F8FF;
       padding: 15px 3px;
   
   
@@ -236,7 +285,7 @@ const StyledDiv = styled.div`
       .mission-img{
         width: 42%;
         img{
-          object-fit: contain;
+          object-fit: cover;
           border-radius: 20px;
         }
       }
@@ -253,25 +302,23 @@ const StyledDiv = styled.div`
       display: flex;
       justify-content: space-between;
       width: 90%;
-      margin: 1.5% 1%;
-      background-color: #F8F8FF;
+      margin: auto;
       padding: 15px 3px;
   
       .vision-div{
-        width: 55%;
+        width: 45%;
         text-align: center;
         border:1px solid #A9A9A9;
         border-radius: 10px;
         padding-left: 5px;
         padding-right: 5px;
         padding-top: 50px;
-
       }
   
       .vision-img{
         width: 42%;
         img{
-          object-fit: contain;
+          object-fit: cover;
           border-radius: 20px;
         }
       }
@@ -284,28 +331,135 @@ const StyledDiv = styled.div`
       }
     }
 
-    @media only screen and (max-width:550px){
-      flex-direction: column;
-
-      .values-join{
-        width: 97%;
-        margin-left: 2%;
-      }
-      .mission-vission{
-        width: 92%;
-        margin-bottom: 15px;
+    .values-join{
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .values{
+      width: 55%;
+      padding: 10px;
+      border:1px solid #A9A9A9;
+      border-radius: 10px;
+      ul{
+        text-align: left;
       }
     }
-  }
-
-  .home-background {
-    height: 280px;
-  }
   
-  .home-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    .about-us{
+      width: 30%;
+      padding: 10px;
+      margin: 2%;
+  
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        color: white;
+      }
+    }
+  
+    span{
+        border: 1px solid dodgerblue;
+        margin-top: 8px;
+        padding: 3px 7px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 1050px){
+      .mission-img{
+        width: 42%;
+        img{
+          width:110%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 935px){
+        
+      .vision-img{
+        width: 44%;
+        img{
+          width: 100%;
+        }
+      }        
+    }
+
+    @media only screen and (max-width: 830px){
+              
+      .vision-img{
+        width: 45%;
+        img{
+          width: 120%;
+        }
+      }
+
+      .mission-img{
+        width: 40%;
+          img{
+            width: 115%;
+            height: 100%
+          }
+        }
+    }
+
+    @media only screen and (max-width: 700px){                 
+      .mission-img{
+        img{
+          height: 90%
+        }
+      }
+
+    }
+
+    @media only screen and (max-width: 650px){                 
+      .mission-img{
+        img{
+          width: 112%;
+          height: 80%
+        }
+      }
+
+    }
+
+    @media only screen and (max-width:600px){
+
+      .mission{
+        .mission-div{
+          width: 96%;
+        }
+        .mission-img{
+          display: none;
+        }
+      }
+
+      .vision{
+        .vision-div{
+          width: 96%;
+          padding-top:20px;
+        }
+        .vision-img{
+          display: none;
+        }
+      }
+
+      .values-join{
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .values{
+        width: 95%;
+      }
+    
+      .about-us{
+        width: 95%;
+      }
+    }
   }
 `;
 
