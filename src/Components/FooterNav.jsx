@@ -2,45 +2,45 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
-    faTwitter,
-    faLinkedin
+  faTwitter,
+  faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import styled from "styled-components";
 
 export default function Footer() {
-    return (
-        <StyledDiv>
-            <div className="copy-right">
-                <p>&copy; 2020 STEMJets</p>
-            </div>
-            <div className="social-handle">
-                <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://twitter.com/xxx_"
-                    className="twitter"
-                >
-                    <FontAwesomeIcon icon={faTwitter} size="2x" />
-                </a>
-                <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://www.linkedin.com/in/xxx"
-                    className="linkdIn"
-                >
-                    <FontAwesomeIcon icon={faLinkedin} size="2x" />
-                </a>
-                <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="mailto:stemjets@gmail.com"
-                    className="mail"
-                >
-                    <FontAwesomeIcon icon={faEnvelope} size="2x" />
-                </a>
-            </div>
-        </StyledDiv>
-    );
+  return (
+    <StyledDiv>
+      <div className="copy-right">
+        <p>&copy; 2020 STEMJets</p>
+      </div>
+      <div className="social-handle">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://twitter.com/stemjets"
+          className="twitter"
+        >
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.linkedin.com/in/stemjets/"
+          className="linkdIn"
+        >
+          <FontAwesomeIcon icon={faLinkedin} size="2x" />
+        </a>
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="mailto:stemjets@gmail.com"
+          className="mail"
+        >
+          <FontAwesomeIcon icon={faEnvelope} size="2x" />
+        </a>
+      </div>
+    </StyledDiv>
+  );
 }
 
 
