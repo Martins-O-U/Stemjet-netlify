@@ -24,8 +24,7 @@ function Nav() {
                     <div className="menu-list" onClick={autocloseMenu}><NavLink to="/">Home</NavLink></div>
                     <div className="menu-list" onClick={autocloseMenu}><NavLink to="/about">About</NavLink></div>
                     <div className="menu-list" onClick={autocloseMenu}><NavLink to="/join">Join Us</NavLink></div>
-                    <div className="menu-list" onClick={autocloseMenu}><NavLink to="/blog">Blog</NavLink></div>
-                    <div className="menu-list" id="submit" onClick={autocloseMenu}><NavLink to="/submitblog">Submit A Blog</NavLink></div>
+                    <div className="menu-list" onClick={autocloseMenu}><NavLink to="/#">Blog</NavLink></div>
                     <div className="menu-list" onClick={autocloseMenu}><NavLink to="/contact">Contact</NavLink></div>
                 </div>
             </nav>
