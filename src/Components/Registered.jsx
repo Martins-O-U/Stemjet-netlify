@@ -2,19 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 function Registered() {
-    return (
-        <StyledDiv>
-            <div className="box-container animated animatedFadeInUp fadeInUp">
-                <h2>Thanks for registering</h2>
-                <p><i>Please check your email for a whatsApp link</i></p>
-            </div>
-        </StyledDiv>
-    )
+  return (
+    <StyledDiv>
+      <div className="box-container animated animatedFadeInUp fadeInUp">
+        <h2>Thanks for registering</h2>
+        <p><i>Please check your email for a whatsApp link</i></p>
+      </div>
+    </StyledDiv>
+  )
 }
 
 export default Registered;
 
 const StyledDiv = styled.div`
+height: 100vh;
 @keyframes fadeInUp {
     from {
       transform: translate3d(0, 40px, 0);

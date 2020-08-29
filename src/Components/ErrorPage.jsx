@@ -15,6 +15,7 @@ function ErrorPage() {
 export default ErrorPage;
 
 const StyledDiv = styled.div`
+height: 100vh;
 @keyframes fadeInUp {
     from {
       transform: translate3d(0, 40px, 0);

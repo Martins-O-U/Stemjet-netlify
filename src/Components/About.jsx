@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import aboutImg from "../images/about.jpg";
-import aboutPix from "../images/background.jpg";
+
 
 export default function About() {
   return (
@@ -42,9 +42,8 @@ export default function About() {
 }
 
 const StyledPage = styled.div`
-    margin-top: 4.8%;
+    margin-top: 4.4%;
     text-align: center;
-    background-image: url(${aboutPix});
 
     @media only screen and (max-width:1000px){
         margin-top: 6%;
@@ -60,7 +59,7 @@ const StyledPage = styled.div`
     }
     header{
         height: 200px;
-        background: #E6E6FA;
+        background: #FFA500;
         h1{
             margin-bottom: 20px;
         }
@@ -130,7 +129,7 @@ const StyledPage = styled.div`
 
 const StyledParagragph = styled.div`
 margin-top: 250px;
-margin-bottom: 55px;
+margin-bottom: 50px;
 margin-left: 5%;
 margin-right: 5%;
 padding: 2px 7px 5px 12px;

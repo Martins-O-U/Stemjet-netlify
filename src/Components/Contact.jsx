@@ -77,6 +77,7 @@ export default Contact;
 
 const StyledDiv = styled.div`
 text-align: center;
+height: 100vh;
 .p-one{
   padding-top: 3%;
   margin-bottom: 5px;

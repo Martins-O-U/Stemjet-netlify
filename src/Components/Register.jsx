@@ -89,6 +89,7 @@ export default JoinUs;
 const StyledDiv = styled.div`
 text-align: center;
 Margin-top: 5%;
+height: 100vh;
 
 @keyframes fadeInUp {
   from {
