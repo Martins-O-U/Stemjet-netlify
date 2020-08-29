@@ -88,8 +88,32 @@ export default JoinUs;
 
 const StyledDiv = styled.div`
 text-align: center;
-Margin-top: 5%;
+padding-top: 10%;
 height: 100vh;
+
+@media only screen and (max-width: 1000px){
+  padding-top: 11%;
+}
+
+@media only screen and (max-width: 900px){
+  padding-top: 12%;
+}
+
+@media only screen and (max-width: 800px){
+  padding-top: 13%;
+}
+
+@media only screen and (max-width: 700px){
+  padding-top: 14%;
+}
+
+@media only screen and (max-width: 600px){
+  padding-top: 15%;
+}
+
+@media only screen and (max-width: 500px){
+  padding-top: 16%;
+}
 
 @keyframes fadeInUp {
   from {
@@ -155,24 +179,28 @@ span{
 }
 
 .form-container{
-    margin: 4% 15%;
-    padding: 30px 30px 5px 30px;
+    margin: 3% 20% 4% 20%;
+    padding: 70px 10px 20px 10px;
     text-align: center;
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
+    background: #F0F8FF;
+    border-radius: 20px;
 
     @media only screen and (max-width: 760px){
       margin: 4% 7%;
-      padding: 30px 15px 5px 15px;
+      padding: 70px 15px 5px 15px;
     }
 
     @media only screen and (max-width: 590px){
       margin: 4% 5%;
-      padding: 30px 10px 5px 10px;
+      padding: 60px 10px 5px 10px;
     }
 
     @media only screen and (max-width: 480px){
-      padding: 30px 5px 5px 5px;
+      padding: 40px 5px 5px 5px;
+      background: none;
+      border: 1.5px solid #F0F8FF;
     }
 
   input{
@@ -204,6 +232,7 @@ span{
     border: 1px solid #2098d1;
     border-radius: 10px;
     font-size: 14.5px;
+    background: #F0F8FF;
    }
    .submit-C{
     width: 50%;
