@@ -67,7 +67,7 @@ const StyledDiv = styled.div`
   height: 100%;
   width: 100%;
   padding-bottom: 10px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 
   @keyframes fadeInUp {
     from {
@@ -263,8 +263,8 @@ const StyledDiv = styled.div`
     width: 90%;
     margin: auto;
     text-align: center;
-    background-color: #F8F8FF;
     padding-bottom: 20px;
+    font-weight: 800px;
 
     .mission{
       display: flex;
