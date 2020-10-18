@@ -77,7 +77,16 @@ export default Contact;
 
 const StyledDiv = styled.div`
 text-align: center;
-height: 100vh;
+padding-top: 7%;
+padding-bottom: 10%;
+
+@media only screen and (max-width:450px){
+  padding-bottom: 30%;
+}
+
+@media only screen and (max-width:375px){
+  padding-bottom: 40%;
+}
 .p-one{
   padding-top: 3%;
   margin-bottom: 5px;
@@ -150,7 +159,7 @@ span{
     -webkit-animation-name: fadeInUp;
   }
   .form-container{
-    margin: 8% 10% 7% 10%;
+    margin: 2% 10% 2% 10%;
     padding-right: 30px;
     padding-left: 30px;
     padding-bottom: 5px;
@@ -174,9 +183,10 @@ span{
       padding-right: 10px;
       padding-left: 10px;
     }
+
     @media only screen and (max-width: 360px){
       margin-top: 8%;
-      margin-bottom: 11%;
+      margin-bottom: 1%;
     }
   }
   form{

@@ -15,7 +15,6 @@ function Thanks() {
 export default Thanks;
 
 const StyledDiv = styled.div`
-height: 100vh;
 @keyframes fadeInUp {
     from {
       transform: translate3d(0, 40px, 0);
@@ -57,23 +56,22 @@ height: 100vh;
 
 .box-container{
     text-align: center;
-    margin-top: 22%;
+    padding-top: 22%;
     margin-left: 15%;
     margin-right: 15%; 
-    padding: 20px;
     text-align: center;
     box-shadow: 0 -1px 0 #e0e0e0, 0 7px 10px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
 
     @media only screen and (max-width:900px){
-      margin-top: 28%;
+      padding-top: 28%;
     }
 
     @media only screen and (max-width:750px){
-      margin-top: 32%;
+      padding-top: 32%;
     }
 
     @media only screen and (max-width:600px){
-      margin-top: 37%;
+      padding-top: 37%;
     }
 `;

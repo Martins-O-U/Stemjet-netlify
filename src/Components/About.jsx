@@ -187,10 +187,10 @@ font-weight: 800px;
     font-size: 30px;
 }
 @media only screen and (max-width:460px){
-    margin: 185px 15px 70px 10px;
+    margin: 185px 15px 52px 10px;
 }
 @media only screen and (max-width:400px){
-    margin: 150px 15px 70px 10px;
+    margin: 150px 15px 52px 10px;
 }
 
 .hvr-radial-out {
